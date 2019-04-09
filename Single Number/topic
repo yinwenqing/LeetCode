@@ -1,0 +1,16 @@
+Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+
+Note:
+
+Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+
+Example 1:
+
+Input: [2,2,1]
+Output: 1
+Example 2:
+
+Input: [4,1,2,1,2]
+Output: 4
+给定一个非空数组，数组中有一个元素只出现了一次，其他元素都出现了两次，找出这个出现一次的元素。
+而且不使用额外的空间
