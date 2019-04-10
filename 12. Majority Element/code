@@ -1,0 +1,19 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        TreeMap map = new TreeMap<Integer, Integer>();
+        int i = 1;
+        for (int n : nums) {
+            if (map.get(n) == null) {
+                map.put(n, i);
+            } else {
+                Integer v = (Integer) map.get(n);
+                map.put(n, v + 1);
+            }
+            if((Integer)map.get(n)>nums.length/2){
+                return n;
+            }
+        }
+
+        return (Integer)map.lastKey();
+      }
+}
