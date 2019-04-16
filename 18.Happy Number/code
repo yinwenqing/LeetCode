@@ -1,0 +1,38 @@
+class Solution {
+    public boolean isHappy(int num) {
+           if (num <= 0) {
+            return false;
+        }
+        if(num==1){
+            return true;
+        }
+        Set s=new TreeSet() ;
+        int sum = 0;
+        int n = num;
+        while (sum != num) {
+            int[] splits = new int[(n + "").length()];
+            int i = splits.length - 1;
+            while (n >= 10) {
+                splits[i] = n % 10;
+                n = n / 10;
+                i--;
+            }
+            splits[0] = n;
+
+            for (int j = 0; j < splits.length; j++) {
+                sum = sum + splits[j] * splits[j];
+            }
+            if (sum == 1) {
+                return true;
+            }
+            if(s.contains(sum)){
+                return false;
+            }
+            s.add(sum);
+            n=sum;
+            sum=0;
+        }
+
+        return true;
+    }
+}
